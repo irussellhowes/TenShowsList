@@ -28,6 +28,13 @@ struct ContentView: View {
         NavigationView {
             List(shows) { show in
                 HStack {
+                    Image(show.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(8)
+                        .padding(.trailing, 10)
+
                     VStack(alignment: .leading) {
                         Text(show.name)
                             .font(.headline)
