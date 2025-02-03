@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+struct Show: Identifiable {
+    let id = UUID()
+    let name: String
+    let description: String
+    let imageName: String
+}
+
 struct ContentView: View {
     var body: some View {
         VStack {
