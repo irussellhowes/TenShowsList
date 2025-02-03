@@ -24,20 +24,22 @@ struct ContentView: View {
         Show(name: "Queen's Gambit", description: "A journey of chess and self-discovery.", imageName: "queensgambit")
     ]
     
-    
-    
-    
-    
-    
-    View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List(shows) { show in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(show.name)
+                            .font(.headline)
+                        Text(show.description)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .padding(.vertical, 4)
+            }
+            .navigationTitle("Favourite Shows")
         }
-        .padding()
     }
 }
 
